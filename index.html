@@ -87,17 +87,83 @@ function moveW4() {
 
       
     </script>
+    
+    <style>
+        .controller {
+            margin: auto;
+            width: 400px;
+            text-align: center;
+        }
+        
+        .buttons {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .btn {
+            width: 100px;
+            height: 50px;
+            border-radius: 5px;
+            margin: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: #fff;
+            background-color: #444;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            transition: background-color 0.2s ease-in-out;
+        }
+        
+        .btn:hover {
+            background-color: #666;
+        }
+        
+        .btn-up, .btn-down {
+            width: 50px;
+        }
+        .btn-left, .btn-right {
+            height: 50px;
+        }
+        
+        .btn-stop {
+            background-color: #f00;
+        }
+        
+        .btn-w1 {
+            background-color: #0f0;
+        }
+        
+        .btn-w2 {
+            background-color: #00f;
+        }
+        
+        .btn-w3 {
+            background-color: #ff0;
+        }
+        
+        .btn-w4 {
+            background-color: #f0f;
+        }
+    </style>
 </head>
 <body>
-    <h1>Water Robot Control Panel</h1>
-    <button type="button" onclick="moveForward()">Move Forward</button>
-<button type="button" onclick="moveBackward()">Move Backward</button>
-<button type="button" onclick="moveLeft()">Move Left</button>
-<button type="button" onclick="moveRight()">Move Right</button>
-<button type="button" onclick="moveW1()">Move W1</button>
-<button type="button" onclick="moveW2()">Move W2</button>
-<button type="button" onclick="moveW3()">Move W3</button>
-<button type="button" onclick="moveW4()">Move W4</button>
+    
+    <div class="controller">
+        <h1>Water Body Waste Collector (WBWC) Control Panel</h1>
+        <div class="buttons">
+            <button class="btn btn-up" onclick="forward()">UP</button><br>
+            <button class="btn btn-left" onclick="left()">LEFT</button>
+            <button class="btn btn-stop" onclick="stop()">STOP</button>
+            <button class="btn btn-right" onclick="right()">RIGHT</button><br>
+            <button class="btn btn-down" onclick="backward()">DOWN</button><br>
+            <button class="btn btn-w1" onclick="w1()">W1</button>
+            <button class="btn btn-w2" onclick="w2()">W2</button>
+            <button class="btn btn-w3" onclick="w3()">W3</button>
+            <button class="btn btn-w4" onclick="w4()">W4</button>
+        </div>
+    </div>
 
 </body>
 </html>
