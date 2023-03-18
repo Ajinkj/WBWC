@@ -2,22 +2,102 @@
 <html>
 <head>
     <title>Water Robot Control Panel</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+      
+      function moveForward() {
+    $.ajax({
+        url: "/forward",
+        type: "GET",
+        success: function(response) {
+            console.log(response);
+        }
+    });
+}
+
+function moveBackward() {
+    $.ajax({
+        url: "/backward",
+        type: "GET",
+        success: function(response) {
+            console.log(response);
+        }
+    });
+}
+
+function moveLeft() {
+    $.ajax({
+        url: "/left",
+        type: "GET",
+        success: function(response) {
+            console.log(response);
+        }
+    });
+}
+
+function moveRight() {
+    $.ajax({
+        url: "/right",
+        type: "GET",
+        success: function(response) {
+            console.log(response);
+        }
+    });
+}
+
+function moveW1() {
+    $.ajax({
+        url: "/w1",
+        type: "GET",
+        success: function(response) {
+            console.log(response);
+        }
+    });
+}
+
+function moveW2() {
+    $.ajax({
+        url: "/w2",
+        type: "GET",
+        success: function(response) {
+            console.log(response);
+        }
+    });
+}
+
+function moveW3() {
+    $.ajax({
+        url: "/w3",
+        type: "GET",
+        success: function(response) {
+            console.log(response);
+        }
+    });
+}
+
+function moveW4() {
+    $.ajax({
+        url: "/w4",
+        type: "GET",
+        success: function(response) {
+            console.log(response);
+        }
+    });
+}
+
+      
+    </script>
 </head>
 <body>
     <h1>Water Robot Control Panel</h1>
-    <form method="POST" action="/forward">
-        <button type="submit">Forward</button>
-    </form>
-    <form method="POST" action="/backward">
-        <button type="submit">Backward
-    <form method="POST" action="/left">
-        <button type="submit">Left</button>
-    </form>
-    <form method="POST" action="/right">
-        <button type="submit">Right</button>
-    </form>
-    <form method="POST" action="/stop">
-        <button type="submit">Stop</button>
-    </form>
+    <button type="button" onclick="moveForward()">Move Forward</button>
+<button type="button" onclick="moveBackward()">Move Backward</button>
+<button type="button" onclick="moveLeft()">Move Left</button>
+<button type="button" onclick="moveRight()">Move Right</button>
+<button type="button" onclick="moveW1()">Move W1</button>
+<button type="button" onclick="moveW2()">Move W2</button>
+<button type="button" onclick="moveW3()">Move W3</button>
+<button type="button" onclick="moveW4()">Move W4</button>
+
 </body>
 </html>
