@@ -7,21 +7,21 @@ import numpy as np
 
 app = Flask(__name__)
 # Motor 1
-ENA = 4 # enable pin for motor 1
+#ENA = 4 # enable pin for motor 1
 IN1 = 17 # input pin 1 for motor 1
 IN2 = 27 # input pin 2 for motor 1
  
 # Motor 2
-ENB = 18 # enable pin for motor 2
+#ENB = 18 # enable pin for motor 2
 IN3 = 23 # input pin 1 for motor 2
 IN4 = 24 # input pin 2 for motor 2
  
 # Set up the GPIO pins
 GPIO.setmode(GPIO.BCM)
-GPIO.setup(ENA, GPIO.OUT)
+#GPIO.setup(ENA, GPIO.OUT)
 GPIO.setup(IN1, GPIO.OUT)
 GPIO.setup(IN2, GPIO.OUT)
-GPIO.setup(ENB, GPIO.OUT)
+#GPIO.setup(ENB, GPIO.OUT)
 GPIO.setup(IN3, GPIO.OUT)
 GPIO.setup(IN4, GPIO.OUT)
 
@@ -55,40 +55,40 @@ def index():
 
 @app.route('/forward')
 def forward():
-    GPIO.output(ENA, GPIO.HIGH)
+    #GPIO.output(ENA, GPIO.HIGH)
     GPIO.output(IN1, GPIO.HIGH)
     GPIO.output(IN2, GPIO.LOW)
-    GPIO.output(ENB, GPIO.HIGH)
+    #GPIO.output(ENB, GPIO.HIGH)
     GPIO.output(IN3, GPIO.HIGH)
     GPIO.output(IN4, GPIO.LOW)
     return 'Moving forward'
 
 @app.route('/backward')
 def backward():
-    GPIO.output(ENA, GPIO.HIGH)
+    #GPIO.output(ENA, GPIO.HIGH)
     GPIO.output(IN1, GPIO.LOW)
     GPIO.output(IN2, GPIO.HIGH)
-    GPIO.output(ENB, GPIO.HIGH)
+    #GPIO.output(ENB, GPIO.HIGH)
     GPIO.output(IN3, GPIO.LOW)
     GPIO.output(IN4, GPIO.HIGH)
     return 'Moving backward'
 
 @app.route('/left')
 def left():
-    GPIO.output(ENA, GPIO.HIGH)
+    #GPIO.output(ENA, GPIO.HIGH)
     GPIO.output(IN1, GPIO.LOW)
     GPIO.output(IN2, GPIO.HIGH)
-    GPIO.output(ENB, GPIO.HIGH)
+    #GPIO.output(ENB, GPIO.HIGH)
     GPIO.output(IN3, GPIO.HIGH)
     GPIO.output(IN4, GPIO.LOW)
     return 'Moving left'
 
 @app.route('/right')
 def right():
-    GPIO.output(ENA, GPIO.HIGH)
+    #GPIO.output(ENA, GPIO.HIGH)
     GPIO.output(IN1, GPIO.HIGH)
     GPIO.output(IN2, GPIO.LOW)
-    GPIO.output(ENB, GPIO.HIGH)
+    #GPIO.output(ENB, GPIO.HIGH)
     GPIO.output(IN3, GPIO.LOW)
     GPIO.output(IN4, GPIO.HIGH)
     return 'Moving right'
@@ -96,8 +96,12 @@ def right():
 @app.route('/stop')
 def stop():
     # Stop both motors
-    GPIO.output(ENA, GPIO.LOW)
-    GPIO.output(ENB, GPIO.LOW)
+    #GPIO.output(ENA, GPIO.LOW)
+    #GPIO.output(ENB, GPIO.LOW)
+    GPIO.output(IN1, GPIO.LOW)
+    GPIO.output(IN2, GPIO.LOW)
+    GPIO.output(IN3, GPIO.LOW)
+    GPIO.output(IN4, GPIO.LOW)
     return 'Stopped'
 
 if __name__ == '__main__':
