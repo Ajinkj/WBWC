@@ -1,0 +1,23 @@
+sudo apt-get update && sudo apt-get upgrade
+
+sudo apt-get install libhdf5-dev libhdf5-serial-dev libhdf5-103 libatlas-base-dev libjasper-dev libqtgui4 libqt4-test
+
+pip3 install opencv-python-headless
+
+sudo apt install python3-opencv
+
+cmake -D CMAKE_BUILD_TYPE=RELEASE \
+      -D CMAKE_INSTALL_PREFIX=/usr/local \
+      -D INSTALL_PYTHON_EXAMPLES=ON \
+      -D INSTALL_C_EXAMPLES=OFF \
+      -D OPENCV_ENABLE_NONFREE=ON \
+      -D WITH_CUDA=OFF \
+      -D WITH_CUDNN=OFF \
+      -D OPENCV_DNN_CUDA=OFF \
+      -D BUILD_opencv_python3=TRUE \
+      -D BUILD_opencv_python2=FALSE \
+      -D OPENCV_EXTRA_MODULES_PATH=../../opencv_contrib/modules ..
+      
+make
+
+sudo make install
