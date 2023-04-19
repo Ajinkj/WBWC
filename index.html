@@ -5,7 +5,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script>
       
-      function moveForward() {
+      function forward() {
     $.ajax({
         url: "/forward",
         type: "GET",
@@ -15,7 +15,7 @@
     });
 }
 
-function moveBackward() {
+function backward() {
     $.ajax({
         url: "/backward",
         type: "GET",
@@ -25,7 +25,7 @@ function moveBackward() {
     });
 }
 
-function moveLeft() {
+function left() {
     $.ajax({
         url: "/left",
         type: "GET",
@@ -35,7 +35,7 @@ function moveLeft() {
     });
 }
 
-function moveRight() {
+function right() {
     $.ajax({
         url: "/right",
         type: "GET",
@@ -45,7 +45,7 @@ function moveRight() {
     });
 }
 
-function moveW1() {
+function W1() {
     $.ajax({
         url: "/w1",
         type: "GET",
@@ -55,7 +55,7 @@ function moveW1() {
     });
 }
 
-function moveW2() {
+function W2() {
     $.ajax({
         url: "/w2",
         type: "GET",
@@ -65,7 +65,7 @@ function moveW2() {
     });
 }
 
-function moveW3() {
+function W3() {
     $.ajax({
         url: "/w3",
         type: "GET",
@@ -75,7 +75,7 @@ function moveW3() {
     });
 }
 
-function moveW4() {
+function W4() {
     $.ajax({
         url: "/w4",
         type: "GET",
@@ -84,7 +84,15 @@ function moveW4() {
         }
     });
 }
-
+function stop() {
+    $.ajax({
+        url: "/stop",
+        type: "GET",
+        success: function(response) {
+            console.log(response);
+        }
+    });
+}
       
     </script>
     
@@ -121,10 +129,10 @@ function moveW4() {
         }
         
         .btn-up, .btn-down {
-            width: 50px;
+            width: 100px;
         }
         .btn-left, .btn-right {
-            height: 50px;
+            width: 100px;
         }
         
         .btn-stop {
